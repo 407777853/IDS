@@ -1,0 +1,52 @@
+command:
+  uptime:
+    CPU使用情况
+  free -m:
+    内存使用情况
+  df -hP:
+    磁盘使用情况
+  grep "Failed password" /var/log/secure:
+    ssh登录情况
+  cat /root/tcpdump.pcap:
+    扫描攻击情况
+  crontab -l:
+    crontab记录
+  grep "/bin/bash" /etc/passwd:
+    可登录用户记录
+
+
+parser_rule:
+  uptime:
+    - 5
+    - '{0} | {1} | 异常 | CPU使用率过高，请查看详细数据，确认是否有勒索病毒攻击'
+  df -hP:
+    - 80
+    - '{0} | {1} | 异常 | 磁盘空间使用率过高，请查看详细数据，确认是否有勒索病毒攻击'
+  free -m:
+    - 80
+    - '{0} | {1} | 异常 | 内存使用率过高，请查看详细数据，确认是否有勒索病毒攻击'
+  grep "Failed password" /var/log/secure:
+    - 10
+    - '{0} | {1} | 异常 | ssh登录次数过多，请查看详细数据，确认是否有ssh爆破攻击'
+  cat /root/tcpdump.pcap:
+    #提前在linux系统下执行命令[root@localhost ~]# tcpdump -S -n -i ens33| grep 'win 1024'  | tee tcpdump.pcap
+    - 20
+    - '{0} | {1} | 异常 | 扫描连接次数过多，请查看详细数据，确认是否有扫描攻击'
+  crontab -l:
+    - 0
+    - '{0} | {1} | 异常 | 有计划任务准备执行，请查看详细数据，确认是否有后门植入'
+  grep "/bin/bash" /etc/passwd:
+    - 1
+    - '{0} | {1} | 异常 | 有用户添加执行，请查看详细数据，确认是否有后门植入'
+
+out_md_dir: './md_dir'
+out_html_dir: './html_dir'
+pcinfo: 'pcinfo.txt'
+templates: './templates'
+temp_dir: './temp'
+temp_templates: './templates/temp'
+alldata_name: 'IDS详细数据记录'
+data_name: 'IDS报告'
+
+
+
