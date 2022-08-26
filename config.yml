@@ -29,7 +29,7 @@ parser_rule:
     - 10
     - '{0} | {1} | 异常 | ssh登录次数过多，请查看详细数据，确认是否有ssh爆破攻击'
   cat /root/tcpdump.pcap:
-    #提前在linux系统下执行命令[root@localhost ~]# tcpdump -S -n -i ens33| grep 'win 1024'  | tee tcpdump.pcap
+    #提前在linux系统下执行命令[root@localhost ~]# tcpdump -S -n -i ens33| grep 'win 1024' | tee tcpdump.pcap
     - 20
     - '{0} | {1} | 异常 | 扫描连接次数过多，请查看详细数据，确认是否有扫描攻击'
   crontab -l:

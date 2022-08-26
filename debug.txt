@@ -1,0 +1,27 @@
+[INFO 2022-08-26 13:14:41] 开始执行
+[INFO 2022-08-26 13:14:41] 清空./md_dir目录
+[INFO 2022-08-26 13:14:41] 开始清空./temp目录
+[INFO 2022-08-26 13:14:41] 清空./html_dir目录
+[INFO 2022-08-26 13:14:42] Connected (version 2.0, client OpenSSH_7.4)
+[INFO 2022-08-26 13:14:42] Connected (version 2.0, client OpenSSH_7.4)
+[INFO 2022-08-26 13:14:42] Authentication (password) successful!
+[INFO 2022-08-26 13:14:42] Authentication (password) successful!
+[ERROR 2022-08-26 13:14:47] 192.168.110.235,链接超时,timed out
+[INFO 2022-08-26 13:16:21] 开始执行
+[INFO 2022-08-26 13:16:21] 清空./md_dir目录
+[INFO 2022-08-26 13:16:21] 开始清空./temp目录
+[INFO 2022-08-26 13:16:21] 清空./html_dir目录
+[INFO 2022-08-26 13:16:22] Connected (version 2.0, client OpenSSH_7.4)
+[INFO 2022-08-26 13:16:22] Connected (version 2.0, client OpenSSH_7.4)
+[INFO 2022-08-26 13:16:22] Authentication (password) successful!
+[INFO 2022-08-26 13:16:24] Authentication (password) successful!
+[ERROR 2022-08-26 13:16:27] 192.168.110.235,链接超时,timed out
+[INFO 2022-08-26 13:19:46] 开始执行
+[INFO 2022-08-26 13:19:46] 清空./md_dir目录
+[INFO 2022-08-26 13:19:46] 开始清空./temp目录
+[INFO 2022-08-26 13:19:46] 清空./html_dir目录
+[INFO 2022-08-26 13:19:47] Connected (version 2.0, client OpenSSH_7.4)
+[INFO 2022-08-26 13:19:47] Connected (version 2.0, client OpenSSH_7.4)
+[INFO 2022-08-26 13:19:47] Authentication (password) successful!
+[INFO 2022-08-26 13:19:47] Authentication (password) successful!
+[ERROR 2022-08-26 13:19:52] 192.168.110.235,链接超时,timed out

@@ -199,8 +199,17 @@ class Generator_md(Ssh):
                 status = 1
             if status == 1:
                 with open(f'{self.temp_dir}/{filename}.md', 'a', encoding='utf-8') as f:
-                    data = re.sub('\n', '<br>', data)
-                    f.write(f'{self.ip} | {data} | {self.remarks} | {command}' + '\n')
+
+                    if filename == "ssh登录情况" or filename == "扫描攻击情况":
+                        data = data.split('<br>')
+                        num = len(data) - 12
+                        data = data[num:-2]
+                        f.write(f'{self.ip} | {data} | {self.remarks} | {command}' + '\n')
+
+
+                    else:
+                        # data = re.sub('\n', '<br>', data)
+                        f.write(f'{self.ip} | {data} | {self.remarks} | {command}' + '\n')
         except Exception as e:
             logging.error(f'generator_normal_md函数执行错误,message：{e}')
 
@@ -260,7 +269,7 @@ class Generator_md(Ssh):
                 elif command == '''cat /root/tcpdump.pcap''':
                     self.generator_a(filename, max_value)
                     data = data.split('\n')
-                    current_value = len(data)
+                    current_value = len(data) - 1
                     if current_value > max_value:
                         with open(f'{self.temp_dir}/a_{filename}.md', 'a', encoding='utf-8') as f:
                             f.write(description.format(self.ip, current_value) + '\n')

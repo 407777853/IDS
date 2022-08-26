@@ -14,7 +14,7 @@
 ### 运行
     注意：首先你需要具备Python3环境
     
-    1、git clone https://github.com/407777853/IDS.git
+    1、git clone 
     2、pip3 install -r required.txt
     3、修改pcinfo.txt文件，按需写入主机IP、端口、用户、密码、描述5列，以空格分隔。依次写入多行，每行表示一台主机
     例：
